@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+
+{% block title %}About - PDF Editor{% endblock %}
+{% block meta_description %}Learn about our advanced PDF editing platform that provides pixel-perfect text editing with comprehensive formatting preservation.{% endblock %}
+
+{% block content %}
+<div class="container py-5">
+    <div class="row">
+        <div class="col-lg-8 mx-auto">
+            <h1 class="mb-4">About PDF Editor</h1>
+            
+            <section class="mb-5">
+                <h2 class="h3 mb-3">Our Mission</h2>
+                <p class="lead">We're dedicated to providing the most accurate PDF editing experience on the web.</p>
+                <p>PDF Editor was created to solve a common problem: the need to make small changes to PDF documents without losing any formatting. Traditional PDF editors either limit your editing capabilities or don't preserve the exact formatting when making changes. Our platform changes that by offering pixel-perfect editing with immediate visual feedback.</p>
+            </section>
+            
+            <section class="mb-5">
+                <h2 class="h3 mb-3">How Our Technology Works</h2>
+                <p>Our advanced PDF-to-HTML conversion engine carefully analyzes your document to create an exact HTML replica that preserves:</p>
+                <ul>
+                    <li><strong>Text Styling:</strong> We maintain bold, italic, underline, strikethrough, and other text decorations.</li>
+                    <li><strong>Font Properties:</strong> All font families, weights, styles, and sizes are preserved.</li>
+                    <li><strong>Layout & Spacing:</strong> Text alignment, line height, letter spacing, and other layout aspects remain intact.</li>
+                    <li><strong>Advanced Formatting:</strong> Subscript, superscript, text justification, and hyphenation are all maintained.</li>
+                </ul>
+                <p>Once you've made your edits, our platform regenerates the PDF with the exact same formatting, ensuring your document looks professional and consistent.</p>
+            </section>
+            
+            <section class="mb-5">
+                <h2 class="h3 mb-3">Our Standards</h2>
+                <p>We adhere to the highest coding standards, including NASA's safety-critical guidelines. This means our platform is:</p>
+                <ul>
+                    <li><strong>Reliable:</strong> Built with small, simple functions and bounded loops for stability</li>
+                    <li><strong>Secure:</strong> Implements rigorous input validation and proper error handling</li>
+                    <li><strong>Maintainable:</strong> Follows strict separation of concerns with modular code design</li>
+                    <li><strong>Well-documented:</strong> Includes comprehensive inline comments and clear documentation</li>
+                </ul>
+            </section>
+            
+            <section>
+                <h2 class="h3 mb-3">Start Editing Today</h2>
+                <p>Experience the difference with our advanced PDF editing platform. Perfect for professionals who need to make quick, accurate changes to important documents.</p>
+                <div class="mt-4">
+                    <a href="{{ url_for('editor') }}" class="btn btn-primary">Try PDF Editor</a>
+                    <a href="{{ url_for('contact') }}" class="btn btn-outline-secondary ms-2">Contact Us</a>
+                </div>
+            </section>
+        </div>
+    </div>
+</div>
+{% endblock %}

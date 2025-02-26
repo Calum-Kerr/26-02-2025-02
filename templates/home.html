@@ -1,0 +1,79 @@
+{% extends "base.html" %}
+
+{% block title %}Home - PDF Editor{% endblock %}
+{% block meta_description %}Edit your PDF documents online with our powerful PDF editor. Convert PDF to editable HTML and back with perfect formatting.{% endblock %}
+
+{% block content %}
+<section class="hero-section py-5 text-center">
+    <div class="container">
+        <h1 class="display-4 fw-bold mb-4">Edit PDFs Online with Pixel-Perfect Accuracy</h1>
+        <p class="lead mb-4">Convert your PDFs to HTML, edit the text with all formatting preserved, and save back to PDF format.</p>
+        <div class="d-grid gap-2 d-md-flex justify-content-md-center">
+            <a href="{{ url_for('editor') }}" class="btn btn-primary btn-lg px-4 me-md-2">Start Editing</a>
+            <a href="{{ url_for('about') }}" class="btn btn-outline-secondary btn-lg px-4">Learn More</a>
+        </div>
+    </div>
+</section>
+
+<section class="features py-5 bg-light">
+    <div class="container">
+        <h2 class="text-center mb-5">Features</h2>
+        <div class="row g-4">
+            <div class="col-md-4">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <h3 class="card-title h5">1:1 PDF to HTML Conversion</h3>
+                        <p class="card-text">Our advanced conversion engine preserves every text attribute, from font styles to spacing and alignment.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <h3 class="card-title h5">Live Text Editing</h3>
+                        <p class="card-text">Edit text directly in your browser with real-time reflow and formatting preservation.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <h3 class="card-title h5">Perfect PDF Regeneration</h3>
+                        <p class="card-text">Save your edits back to PDF format with all formatting and layout intact.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="how-it-works py-5">
+    <div class="container">
+        <h2 class="text-center mb-5">How It Works</h2>
+        <div class="row">
+            <div class="col-md-4 text-center mb-4">
+                <div class="step-number bg-primary text-white rounded-circle d-inline-flex align-items-center justify-content-center mb-3" style="width: 50px; height: 50px;">1</div>
+                <h3 class="h5">Upload Your PDF</h3>
+                <p>Select and upload the PDF document you want to edit.</p>
+            </div>
+            <div class="col-md-4 text-center mb-4">
+                <div class="step-number bg-primary text-white rounded-circle d-inline-flex align-items-center justify-content-center mb-3" style="width: 50px; height: 50px;">2</div>
+                <h3 class="h5">Edit Content</h3>
+                <p>Modify text and formatting using our intuitive editor interface.</p>
+            </div>
+            <div class="col-md-4 text-center mb-4">
+                <div class="step-number bg-primary text-white rounded-circle d-inline-flex align-items-center justify-content-center mb-3" style="width: 50px; height: 50px;">3</div>
+                <h3 class="h5">Download Result</h3>
+                <p>Save your changes back to PDF with all formatting preserved.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="cta-section py-5 bg-light">
+    <div class="container text-center">
+        <h2 class="mb-4">Ready to edit your PDF?</h2>
+        <a href="{{ url_for('editor') }}" class="btn btn-primary btn-lg">Start Editing Now</a>
+    </div>
+</section>
+{% endblock %}

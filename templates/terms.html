@@ -1,0 +1,107 @@
+{% extends "base.html" %}
+
+{% block title %}Terms of Use - PDF Editor{% endblock %}
+{% block meta_description %}Read the terms and conditions governing the use of our PDF Editor service.{% endblock %}
+
+{% block content %}
+<div class="container py-5">
+    <div class="row">
+        <div class="col-lg-8 mx-auto">
+            <h1 class="mb-4">Terms of Use</h1>
+            <p class="lead">Last Updated: February 26, 2025</p>
+            
+            <div class="alert alert-warning">
+                <p class="mb-0">Please read these Terms of Use carefully before using the PDF Editor service. By using our service, you agree to be bound by these terms.</p>
+            </div>
+            
+            <section class="mb-5">
+                <h2 class="h4">1. Acceptance of Terms</h2>
+                <p>By accessing or using the PDF Editor service ("Service"), you agree to be bound by these Terms of Use ("Terms"). If you do not agree to all of these Terms, you may not use or access the Service.</p>
+            </section>
+            
+            <section class="mb-5">
+                <h2 class="h4">2. Description of Service</h2>
+                <p>PDF Editor is an online service that allows users to convert PDF documents to HTML format, edit the content while preserving formatting attributes, and convert the edited content back to PDF format.</p>
+            </section>
+            
+            <section class="mb-5">
+                <h2 class="h4">3. User Accounts</h2>
+                <p>Some features of the Service may require you to create an account. You are responsible for maintaining the confidentiality of your account information, including your password, and for all activity that occurs under your account. You agree to notify us immediately of any unauthorized use of your account.</p>
+            </section>
+            
+            <section class="mb-5">
+                <h2 class="h4">4. User Content</h2>
+                <p>Our Service allows you to upload, edit, and store PDF documents ("User Content"). You retain all rights to your User Content. By uploading User Content to the Service, you grant us a limited license to store, process, and transmit your User Content solely for the purpose of providing the Service to you.</p>
+                <p>You represent and warrant that:</p>
+                <ul>
+                    <li>You own or have the necessary rights and permissions to use and authorize us to use your User Content as described in these Terms.</li>
+                    <li>Your User Content does not violate any copyright, trademark, or other intellectual property right, or any right of privacy or publicity.</li>
+                    <li>Your User Content does not contain any material that is defamatory, obscene, or otherwise unlawful.</li>
+                </ul>
+            </section>
+            
+            <section class="mb-5">
+                <h2 class="h4">5. Prohibited Uses</h2>
+                <p>You agree not to use the Service:</p>
+                <ul>
+                    <li>In any way that violates any applicable federal, state, local, or international law or regulation.</li>
+                    <li>To transmit any material that contains any harmful or malicious code.</li>
+                    <li>To attempt to gain unauthorized access to any portion of the Service or any other systems or networks connected to the Service.</li>
+                    <li>To collect or harvest any personal information from other users of the Service.</li>
+                    <li>To interfere with or disrupt the Service or servers or networks connected to the Service.</li>
+                    <li>To impersonate or attempt to impersonate another user or any other person or entity.</li>
+                </ul>
+            </section>
+            
+            <section class="mb-5">
+                <h2 class="h4">6. Intellectual Property Rights</h2>
+                <p>The Service and its original content (excluding User Content), features, and functionality are and will remain the exclusive property of PDF Editor and its licensors. The Service is protected by copyright, trademark, and other laws of both the United States and foreign countries.</p>
+                <p>Our trademarks and trade dress may not be used in connection with any product or service without the prior written consent of PDF Editor.</p>
+            </section>
+            
+            <section class="mb-5">
+                <h2 class="h4">7. Disclaimer of Warranties</h2>
+                <p>THE SERVICE IS PROVIDED "AS IS" AND "AS AVAILABLE" WITHOUT WARRANTIES OF ANY KIND, EITHER EXPRESS OR IMPLIED, INCLUDING, BUT NOT LIMITED TO, IMPLIED WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, NON-INFRINGEMENT, OR COURSE OF PERFORMANCE.</p>
+                <p>PDF Editor does not warrant that:</p>
+                <ul>
+                    <li>The Service will function uninterrupted, secure, or available at any particular time or location.</li>
+                    <li>Any errors or defects will be corrected.</li>
+                    <li>The Service is free of viruses or other harmful components.</li>
+                    <li>The results of using the Service will meet your requirements.</li>
+                </ul>
+            </section>
+            
+            <section class="mb-5">
+                <h2 class="h4">8. Limitation of Liability</h2>
+                <p>IN NO EVENT SHALL PDF EDITOR, ITS OFFICERS, DIRECTORS, EMPLOYEES, OR AGENTS, BE LIABLE FOR ANY INDIRECT, PUNITIVE, INCIDENTAL, SPECIAL, CONSEQUENTIAL, OR EXEMPLARY DAMAGES, INCLUDING WITHOUT LIMITATION DAMAGES FOR LOSS OF PROFITS, GOODWILL, USE, DATA, OR OTHER INTANGIBLE LOSSES, RESULTING FROM:</p>
+                <ul>
+                    <li>Your use of or inability to use the Service.</li>
+                    <li>Any unauthorized access to or use of our servers and/or any personal information stored therein.</li>
+                    <li>Any interruption or cessation of transmission to or from the Service.</li>
+                    <li>Any bugs, viruses, trojan horses, or the like, which may be transmitted to or through the Service by any third party.</li>
+                </ul>
+            </section>
+            
+            <section class="mb-5">
+                <h2 class="h4">9. Governing Law</h2>
+                <p>These Terms shall be governed and construed in accordance with the laws of the United States, without regard to its conflict of law provisions.</p>
+            </section>
+            
+            <section class="mb-5">
+                <h2 class="h4">10. Changes to Terms</h2>
+                <p>We reserve the right, at our sole discretion, to modify or replace these Terms at any time. We will provide notice of any changes by posting the new Terms on this page and updating the "Last Updated" date. You are advised to review these Terms periodically for any changes.</p>
+                <p>By continuing to access or use our Service after those revisions become effective, you agree to be bound by the revised Terms.</p>
+            </section>
+            
+            <section>
+                <h2 class="h4">11. Contact Us</h2>
+                <p>If you have any questions about these Terms, please contact us:</p>
+                <ul>
+                    <li>By email: legal@pdfeditor.example.com</li>
+                    <li>By visiting the <a href="{{ url_for('contact') }}">contact page</a> on our website.</li>
+                </ul>
+            </section>
+        </div>
+    </div>
+</div>
+{% endblock %}

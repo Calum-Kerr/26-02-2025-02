@@ -1,0 +1,167 @@
+{% extends "base.html" %}
+
+{% block title %}PDF Editor{% endblock %}
+{% block meta_description %}Edit your PDF documents online with pixel-perfect accuracy. Preserve all text styling, formatting, and layout.{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/editor.css') }}">
+{% endblock %}
+
+{% block content %}
+<div class="row">
+    <div class="col-md-12">
+        <h1 class="mb-4">PDF Editor</h1>
+    </div>
+</div>
+
+<!-- Upload Section -->
+<div id="upload-section" class="row mb-4">
+    <div class="col-md-12">
+        <div class="card">
+            <div class="card-body">
+                <h2 class="card-title h5">Upload PDF</h2>
+                <form id="upload-form" enctype="multipart/form-data">
+                    <div class="mb-3">
+                        <label for="pdf-file" class="form-label">Select PDF file</label>
+                        <input class="form-control" type="file" id="pdf-file" name="pdf_file" accept=".pdf" required aria-describedby="file-help">
+                        <div id="file-help" class="form-text">Maximum file size: 16MB</div>
+                    </div>
+                    <div class="d-flex justify-content-between">
+                        <button type="submit" class="btn btn-primary" id="upload-btn">Upload & Convert</button>
+                        <div id="upload-status"></div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Editor Section (initially hidden) -->
+<div id="editor-section" class="row" style="display: none;">
+    <div class="col-md-12 mb-3">
+        <div class="card">
+            <div class="card-body">
+                <div class="d-flex justify-content-between align-items-center mb-3">
+                    <h2 class="card-title h5 mb-0">Edit PDF Content</h2>
+                    <div>
+                        <button id="save-pdf-btn" class="btn btn-success">Save as PDF</button>
+                    </div>
+                </div>
+                
+                <!-- Toolbar -->
+                <div class="editor-toolbar mb-3 p-2 border rounded">
+                    <!-- Text Style Controls -->
+                    <div class="btn-group me-2" role="group" aria-label="Text style">
+                        <button type="button" class="btn btn-outline-secondary" data-command="bold" title="Bold">
+                            <i class="bi bi-type-bold"></i>
+                        </button>
+                        <button type="button" class="btn btn-outline-secondary" data-command="italic" title="Italic">
+                            <i class="bi bi-type-italic"></i>
+                        </button>
+                        <button type="button" class="btn btn-outline-secondary" data-command="underline" title="Underline">
+                            <i class="bi bi-type-underline"></i>
+                        </button>
+                        <button type="button" class="btn btn-outline-secondary" data-command="strikeThrough" title="Strikethrough">
+                            <i class="bi bi-type-strikethrough"></i>
+                        </button>
+                    </div>
+                    
+                    <!-- Text Alignment Controls -->
+                    <div class="btn-group me-2" role="group" aria-label="Text alignment">
+                        <button type="button" class="btn btn-outline-secondary" data-command="justifyLeft" title="Align left">
+                            <i class="bi bi-text-left"></i>
+                        </button>
+                        <button type="button" class="btn btn-outline-secondary" data-command="justifyCenter" title="Align center">
+                            <i class="bi bi-text-center"></i>
+                        </button>
+                        <button type="button" class="btn btn-outline-secondary" data-command="justifyRight" title="Align right">
+                            <i class="bi bi-text-right"></i>
+                        </button>
+                        <button type="button" class="btn btn-outline-secondary" data-command="justifyFull" title="Justify">
+                            <i class="bi bi-justify"></i>
+                        </button>
+                    </div>
+                    
+                    <!-- Font Controls -->
+                    <div class="btn-group me-2" role="group" aria-label="Font controls">
+                        <select class="form-select" id="font-family" aria-label="Font family">
+                            <option value="">Font family</option>
+                            <option value="Arial, sans-serif">Arial</option>
+                            <option value="Times New Roman, serif">Times New Roman</option>
+                            <option value="Courier New, monospace">Courier New</option>
+                            <option value="Georgia, serif">Georgia</option>
+                            <option value="Verdana, sans-serif">Verdana</option>
+                        </select>
+                        <select class="form-select" id="font-size" aria-label="Font size">
+                            <option value="">Size</option>
+                            <option value="1">8pt</option>
+                            <option value="2">10pt</option>
+                            <option value="3">12pt</option>
+                            <option value="4">14pt</option>
+                            <option value="5">18pt</option>
+                            <option value="6">24pt</option>
+                            <option value="7">36pt</option>
+                        </select>
+                    </div>
+                    
+                    <!-- Advanced Controls -->
+                    <div class="btn-group" role="group" aria-label="Advanced controls">
+                        <button type="button" class="btn btn-outline-secondary" data-command="subscript" title="Subscript">
+                            <i class="bi bi-subscript"></i>
+                        </button>
+                        <button type="button" class="btn btn-outline-secondary" data-command="superscript" title="Superscript">
+                            <i class="bi bi-superscript"></i>
+                        </button>
+                        <button type="button" class="btn btn-outline-secondary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                            More
+                        </button>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#" data-command="indent">Increase Indent</a></li>
+                            <li><a class="dropdown-item" href="#" data-command="outdent">Decrease Indent</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="#" data-command="insertOrderedList">Numbered List</a></li>
+                            <li><a class="dropdown-item" href="#" data-command="insertUnorderedList">Bullet List</a></li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Editable Content Area -->
+                <div id="pdf-editor-container" class="border rounded p-3">
+                    <div id="pdf-content" class="pdf-content" contenteditable="true">
+                        <p class="text-center text-muted">Upload a PDF to begin editing...</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Loading Indicator -->
+<div id="loading-indicator" class="position-fixed top-0 start-0 w-100 h-100 d-flex justify-content-center align-items-center bg-white bg-opacity-75" style="display: none; z-index: 1050;">
+    <div class="spinner-border text-primary" role="status">
+        <span class="visually-hidden">Loading...</span>
+    </div>
+</div>
+
+<!-- Error Modal -->
+<div class="modal fade" id="error-modal" tabindex="-1" aria-labelledby="error-modal-label" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="error-modal-label">Error</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body" id="error-message">
+                An error occurred.
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block extra_js %}
+<script src="{{ url_for('static', filename='js/editor.js') }}"></script>
+{% endblock %}

@@ -1,0 +1,109 @@
+{% extends "base.html" %}
+
+{% block title %}Privacy Policy - PDF Editor{% endblock %}
+{% block meta_description %}Learn how we collect, use, and protect your personal information when you use our PDF editing service.{% endblock %}
+
+{% block content %}
+<div class="container py-5">
+    <div class="row">
+        <div class="col-lg-8 mx-auto">
+            <h1 class="mb-4">Privacy Policy</h1>
+            <p class="lead">Last Updated: February 26, 2025</p>
+            
+            <div class="alert alert-info">
+                <p class="mb-0">This privacy policy explains how we collect, use, and protect your personal information when you use our PDF editing service.</p>
+            </div>
+            
+            <section class="mb-5">
+                <h2 class="h4">1. Information We Collect</h2>
+                <p>We collect the following types of information when you use our PDF Editor service:</p>
+                <h3 class="h5 mt-4">1.1 Information You Provide to Us:</h3>
+                <ul>
+                    <li>Account information: When you create an account, we collect your name and email address.</li>
+                    <li>PDF Documents: When you upload PDF files for editing, we temporarily store these files on our servers.</li>
+                    <li>Contact information: If you contact us via our contact form, we collect your name, email address, and the contents of your message.</li>
+                </ul>
+                <h3 class="h5 mt-4">1.2 Information We Collect Automatically:</h3>
+                <ul>
+                    <li>Usage Data: We collect information about how you interact with our service, such as the features you use and the time spent on the platform.</li>
+                    <li>Device Information: We collect information about the device you use to access our service, including browser type, operating system, and device identifiers.</li>
+                    <li>Cookies and Similar Technologies: We use cookies and similar technologies to collect information about your browsing activities.</li>
+                </ul>
+            </section>
+            
+            <section class="mb-5">
+                <h2 class="h4">2. How We Use Your Information</h2>
+                <p>We use your information for the following purposes:</p>
+                <ul>
+                    <li>To provide and maintain our service, including processing your PDF documents for editing.</li>
+                    <li>To improve and personalize your experience with our service.</li>
+                    <li>To communicate with you, including responding to your inquiries and providing customer support.</li>
+                    <li>To monitor the usage of our service and detect, prevent, and address technical issues.</li>
+                    <li>To comply with legal obligations.</li>
+                </ul>
+            </section>
+            
+            <section class="mb-5">
+                <h2 class="h4">3. Data Security</h2>
+                <p>We implement appropriate technical and organizational measures to protect your personal information against unauthorized or unlawful processing, accidental loss, destruction, or damage. These measures include:</p>
+                <ul>
+                    <li>Encryption of your personal information during transmission and storage.</li>
+                    <li>Regular security assessments of our systems and services.</li>
+                    <li>Strict access controls to limit who can access your information.</li>
+                    <li>Automatic deletion of uploaded PDF files after processing is complete (typically within 24 hours).</li>
+                </ul>
+                <p>However, please note that no method of transmission over the Internet or method of electronic storage is 100% secure. While we strive to use commercially acceptable means to protect your personal information, we cannot guarantee its absolute security.</p>
+            </section>
+            
+            <section class="mb-5">
+                <h2 class="h4">4. Data Retention</h2>
+                <p>We retain your personal information only for as long as necessary to fulfill the purposes for which we collected it, including for the purposes of satisfying any legal, regulatory, tax, accounting, or reporting requirements.</p>
+                <p>Specifically:</p>
+                <ul>
+                    <li>PDF files uploaded for editing are automatically deleted from our servers within 24 hours after processing.</li>
+                    <li>Account information is retained for as long as you maintain an active account with us.</li>
+                    <li>Contact form submissions are retained for up to 1 year to handle your inquiry and for reference purposes.</li>
+                </ul>
+            </section>
+            
+            <section class="mb-5">
+                <h2 class="h4">5. Your Rights</h2>
+                <p>Depending on your location, you may have certain rights regarding your personal information, including:</p>
+                <ul>
+                    <li>The right to access the personal information we hold about you.</li>
+                    <li>The right to request correction of any inaccurate personal information we hold about you.</li>
+                    <li>The right to request erasure of your personal information in certain circumstances.</li>
+                    <li>The right to restrict or object to the processing of your personal information.</li>
+                    <li>The right to data portability, which allows you to request a copy of your personal information in a structured, commonly used, and machine-readable format.</li>
+                    <li>The right to withdraw consent at any time where we rely on consent to process your personal information.</li>
+                </ul>
+                <p>To exercise any of these rights, please contact us using the contact information provided at the end of this policy.</p>
+            </section>
+            
+            <section class="mb-5">
+                <h2 class="h4">6. Third-Party Services</h2>
+                <p>Our service may contain links to third-party websites or services that are not owned or controlled by us. We have no control over, and assume no responsibility for, the content, privacy policies, or practices of any third-party websites or services. We advise you to review the privacy policies of any third-party websites or services that you visit.</p>
+            </section>
+            
+            <section class="mb-5">
+                <h2 class="h4">7. Children's Privacy</h2>
+                <p>Our service is not intended for use by individuals under the age of 16. We do not knowingly collect personally identifiable information from children under 16. If we discover that a child under 16 has provided us with personal information, we will delete such information from our servers immediately.</p>
+            </section>
+            
+            <section class="mb-5">
+                <h2 class="h4">8. Changes to This Privacy Policy</h2>
+                <p>We may update our Privacy Policy from time to time. We will notify you of any changes by posting the new Privacy Policy on this page and updating the "Last Updated" date at the top of this page. You are advised to review this Privacy Policy periodically for any changes.</p>
+            </section>
+            
+            <section>
+                <h2 class="h4">9. Contact Us</h2>
+                <p>If you have any questions about this Privacy Policy, please contact us:</p>
+                <ul>
+                    <li>By email: privacy@pdfeditor.example.com</li>
+                    <li>By visiting the <a href="{{ url_for('contact') }}">contact page</a> on our website.</li>
+                </ul>
+            </section>
+        </div>
+    </div>
+</div>
+{% endblock %}

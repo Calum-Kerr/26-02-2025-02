@@ -1,0 +1,206 @@
+/* PDF Editor-specific styles */
+
+/* Editor Container */
+#pdf-editor-container {
+  min-height: 600px;
+  background-color: #fff;
+  overflow-y: auto;
+  max-height: 800px;
+  position: relative;
+}
+
+/* PDF Content Area - This is where the converted HTML will be displayed */
+.pdf-content {
+  min-height: 100%;
+  padding: 20px;
+  outline: none; /* Remove default focus outline when editing */
+  font-size: 12pt;
+  line-height: 1.5;
+  letter-spacing: normal;
+  word-spacing: normal;
+  white-space: pre-wrap; /* Preserve white spaces and line breaks */
+  border: 1px dashed transparent;
+}
+
+.pdf-content:focus {
+  border-color: var(--primary-color);
+}
+
+/* PDF Page styling */
+.pdf-page {
+  background-color: #fff;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+  margin-bottom: 10px;
+  padding: 40px;
+  position: relative;
+}
+
+/* Editor toolbar styling */
+.editor-toolbar {
+  background-color: #f8f9fa;
+  border-bottom: 1px solid #dee2e6;
+  padding: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 5px;
+}
+
+.editor-toolbar .btn-group {
+  margin-bottom: 5px;
+}
+
+.editor-toolbar select.form-select {
+  max-width: 150px;
+}
+
+/* Styles for different text attributes */
+
+/* Text styling */
+.pdf-bold {
+  font-weight: bold;
+}
+
+.pdf-italic {
+  font-style: italic;
+}
+
+.pdf-underline {
+  text-decoration: underline;
+}
+
+.pdf-overline {
+  text-decoration: overline;
+}
+
+.pdf-strikethrough {
+  text-decoration: line-through;
+}
+
+.pdf-double-underline {
+  text-decoration: underline double;
+}
+
+.pdf-dashed-underline {
+  text-decoration: underline dashed;
+}
+
+.pdf-dotted-underline {
+  text-decoration: underline dotted;
+}
+
+.pdf-blink {
+  animation: blink 1s linear infinite;
+}
+
+@keyframes blink {
+  0%, 49% { opacity: 1; }
+  50%, 100% { opacity: 0; }
+}
+
+/* Script and case */
+.pdf-subscript {
+  vertical-align: sub;
+  font-size: smaller;
+}
+
+.pdf-superscript {
+  vertical-align: super;
+  font-size: smaller;
+}
+
+.pdf-all-caps {
+  text-transform: uppercase;
+}
+
+.pdf-small-caps {
+  font-variant: small-caps;
+}
+
+.pdf-uppercase {
+  text-transform: uppercase;
+}
+
+.pdf-lowercase {
+  text-transform: lowercase;
+}
+
+.pdf-capitalize {
+  text-transform: capitalize;
+}
+
+/* Text alignment */
+.pdf-left {
+  text-align: left;
+}
+
+.pdf-center {
+  text-align: center;
+}
+
+.pdf-right {
+  text-align: right;
+}
+
+.pdf-justify {
+  text-align: justify;
+}
+
+.pdf-indent {
+  text-indent: 30px;
+}
+
+/* Advanced positioning */
+.pdf-vertical-align-top {
+  vertical-align: top;
+}
+
+.pdf-vertical-align-middle {
+  vertical-align: middle;
+}
+
+.pdf-vertical-align-bottom {
+  vertical-align: bottom;
+}
+
+/* Text overflow handling */
+.pdf-overflow-ellipsis {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.pdf-whitespace-normal {
+  white-space: normal;
+}
+
+.pdf-whitespace-nowrap {
+  white-space: nowrap;
+}
+
+.pdf-whitespace-pre {
+  white-space: pre;
+}
+
+.pdf-whitespace-pre-wrap {
+  white-space: pre-wrap;
+}
+
+.pdf-hyphenate {
+  hyphens: auto;
+}
+
+/* Responsiveness for toolbar */
+@media (max-width: 768px) {
+  .editor-toolbar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .editor-toolbar .btn-group,
+  .editor-toolbar select.form-select {
+    width: 100%;
+    max-width: 100%;
+    margin-bottom: 10px;
+  }
+}
